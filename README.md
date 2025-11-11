@@ -1,113 +1,142 @@
 Big Data Capstone Project
 
-Cross-Device Energy Consumption & Carbon Footprint Analytics Using Databricks & Spark ML
+Cross-Device Energy Consumption & Carbon Footprint Analytics using Databricks & Spark ML
 
-This project focuses on analyzing energy usage across multiple device categories and estimating associated carbon emissions at scale using Apache Spark on Databricks. The project provides dashboards, predictive ML models, anomaly detection, sustainability recommendations, and ESG reporting support.
+This project analyzes energy consumption across heterogeneous devices and estimates the associated carbon footprint using scalable distributed processing in Apache Spark on Databricks. It builds interactive dashboards, machine learning models, anomaly detection workflows, and ESG reporting outputs to support sustainability-driven decision-making.
+
+---
 
 Project Structure
 
-data_generation.ipynb – Synthetic IoT-like dataset creation
-use_case_1.ipynb – Energy & Carbon Analytics Dashboard
-use_case_2.ipynb – Adaptive Power Management (Clustering)
-use_case_3.ipynb – Green Charging & Carbon Prediction
-use_case_3_model_eval.ipynb – Model comparison for prediction models
-use_case_4.ipynb – Forecasting and Anomaly Detection
-use_case_5.ipynb – ESG Reporting and Sustainability Summary
-master_pipeline.ipynb – End-to-end workflow pipeline execution
+Notebook	Description
+
+data_generation.ipynb	Synthetic IoT-style energy dataset creation
+use_case_1.ipynb	Energy & Carbon Monitoring Dashboard
+use_case_2.ipynb	Adaptive Power Management using K-Means Clustering
+use_case_3.ipynb	Green Charging & Carbon Prediction Models
+use_case_3_model_eval.ipynb	Model comparison for carbon prediction
+use_case_4.ipynb	Time-Series Forecasting & Anomaly Detection
+use_case_5.ipynb	ESG & Sustainability Reporting Outputs
+master_pipeline.ipynb	Automated end-to-end pipeline execution
+
+---
 
 Technology Stack
 
 Databricks (Community Edition)
-Apache Spark (PySpark)
-Delta Tables for optimized storage
-Spark MLlib (Regression, Clustering, GBT, Random Forest)
-Python
-Databricks SQL Dashboards for visualization
 
-Data Architecture & Processing Workflow
+Apache Spark / PySpark
 
-Raw device-level energy readings → Spark ETL (cleaning & feature engineering) → Delta Lake Storage → ML Modeling → Dashboards & Insights → Sustainability / ESG Reporting Outputs.
+Delta Lake (Optimized Storage)
 
-Data is generated at hourly granularity per device. Carbon footprint is calculated using standardized emission conversion factors. The architecture supports scalable time-series data and ML workflows.
+Spark MLlib (Linear Regression, Random Forest, GBT, K-Means)
 
-Use Case Overview
+Python / Pandas / Matplotlib
 
-Use Case 1: Energy & Carbon Dashboard
+Databricks SQL Dashboards
 
-Visualizes consumption trends by device and location
+---
 
-Calculates total carbon emissions over time
+Data Architecture & Workflow
 
+Device Energy Data → Spark ETL → Delta Storage → ML Modeling 
+→ Dashboards → Carbon Insights → ESG Reporting
 
-Use Case 2: Adaptive Power Management using Clustering
+Data generated hourly for multiple devices and locations
 
-K-Means clusters devices based on consumption behavior
+Carbon emissions calculated using standardized conversion factors
 
-Identifies high-consumption appliances for optimization
+Supports scalable batch analytics and ML training
 
+---
 
-Use Case 3: Green Charging & Carbon-Aware Optimization
+Use Cases
 
-Predicts carbon footprint using:
+1. Energy & Carbon Dashboard
 
-Linear Regression
+Visualizes energy consumption trends by device & location
 
-Random Forest Regressor
-
-Gradient Boosted Tree Regressor (GBR with sampling to avoid model size overflow)
+Computes total carbon emissions over time
 
 
-Random Forest delivered best R² and RMSE performance among evaluated models
+2. Adaptive Power Management (Clustering)
+
+K-Means groups devices based on consumption patterns
+
+Identifies high-load appliances for efficiency optimization
 
 
-Use Case 4: Forecasting & Anomaly Detection
+3. Green Charging & Carbon-Aware Optimization
 
-Feature engineering extracts hour, day, and weekday signals
+Models evaluated to predict carbon emission (carbon_kg):
 
-Linear Regression used for energy forecasting
+Model	Performance Summary
 
-Anomalies detected using residual thresholds
-
-Helps detect abnormal behavior or energy leakage
-
-
-Use Case 5: ESG / Sustainability Reporting
-
-Aggregates carbon impact by device category and location
-
-Outputs summary suitable for corporate carbon transparency reporting
+Linear Regression	Baseline reference model
+Random Forest Regressor	✅ Best accuracy (highest R², lowest RMSE)
+Gradient Boosted Trees (sampled)	Good but limited due to free-tier memory constraints
 
 
-Model Performance Comparison (Use Case 3)
+4. Forecasting & Anomaly Detection
 
-Linear Regression: Baseline performance
-Random Forest: Best accuracy, captures non-linear device behavior effectively
-GBT (sampled): Good, but limited by compute constraints of free tier
+Time-based feature engineering (hour, weekday, seasonality)
+
+Linear Regression forecasting
+
+Anomaly detection using residual thresholding → Detects inefficiencies & leaks
+
+
+5. ESG / Sustainability Reporting
+
+Summarizes device impact & carbon loads
+
+Generates structured outputs usable for corporate ESG disclosure
+
+---
 
 Key Insights
 
-• HVAC and Heating devices contribute the highest consumption load
-• Energy patterns strongly follow daily usage cycles
-• Carbon-aware scheduling can significantly reduce digital carbon footprint
-• Residual anomaly detection identifies unusual spikes and inefficiencies
+HVAC & heating devices account for most energy load
+
+Strong daily and hourly consumption cycles
+
+Carbon-aware scheduling reduces energy cost + environmental impact
+
+Residual anomaly monitoring identifies waste & abnormal usage early
+
+---
 
 Green Charging Recommendations
 
-• Schedule charging during low grid-carbon hours
-• Automate heavy appliance operation to non-peak periods
-• Replace high-load legacy devices to reduce long-term energy consumption
-• Continuously monitor anomalies to prevent energy waste
+Recommendation	Impact
+
+Shift high-load charging to low-carbon grid hours	Lower carbon intensity
+Automate peak/off-peak scheduling	Reduces cost & emissions
+Replace inefficient legacy devices	Long-term sustainability
+Continuously monitor anomaly alerts	Prevents waste & failures
+
+---
 
 How to Run
 
-1. Import notebooks into Databricks
+1. Import notebooks into Databricks Workspace
 
-2. Run data_generation.ipynb to create dataset
 
-3. Run use_case notebooks in sequence or execute master_pipeline.ipynb for automated execution
+2. Execute data_generation.ipynb to create dataset
 
-4. View dashboards inside Databricks workspace
 
+3. Run use-case notebooks in sequence or execute master_pipeline.ipynb
+
+
+4. Open dashboards via Databricks workspace panels
+
+---
+
+Project Demo Video
+
+🔗 https://drive.google.com/file/d/11aoxNGh1hQdlEc3OusAFoCS5hIqAJFxu/view?usp=sharing
+
+---
 
 Author
 

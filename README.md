@@ -132,9 +132,11 @@ How to Run
 
 ---
 
-Project Demo Video
+## 🎬 Demo Video
+This video demonstrates the full pipeline execution, dashboards, machine learning models, and insights generated in the project.
 
-🔗 https://drive.google.com/file/d/11aoxNGh1hQdlEc3OusAFoCS5hIqAJFxu/view?usp=sharing
+👉 *Watch/Download Video:*  
+https://drive.google.com/uc?export=download&id=11aoxNGh1hQdlEc3OusAFoCS5hIqAJFxu
 
 ---
 
